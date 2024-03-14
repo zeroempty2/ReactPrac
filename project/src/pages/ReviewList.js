@@ -1,6 +1,7 @@
 import React from "react"
 import {Routes,Route,Link} from "react-router-dom";
 import Review from "./Review";
+import WriteReview from "./WriteReview";
 
 const Reviews = ({reviewData}) =>{
     return(
@@ -16,6 +17,7 @@ const Reviews = ({reviewData}) =>{
 }
 
 const ReviewList = () =>{
+   
     const reviews = [
         {reviewId : 1,
         writerName : 'kim',
@@ -39,9 +41,16 @@ const ReviewList = () =>{
             </thead>
         
         <tbody>
-            {reviews.map(review => <Reviews reviewData = {review}/>)}
+            {reviews.map(review => <Reviews key={review.reviewId} reviewData={review} />)}
         </tbody>
+        <div>
+        <Link to = "/writeReview"><button >리뷰작성</button></Link >
+        </div>
+        <Routes>
+            <Route path="/writeReview" element={<WriteReview />} />
+        </Routes>
         </table>
+        
     );
 
 }

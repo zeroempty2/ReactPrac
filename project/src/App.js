@@ -8,6 +8,8 @@ import Input2 from "./pages/Input2";
 import List from "./pages/List";
 import ReviewList from "./pages/ReviewList";
 import Review from "./pages/Review";
+import WriteReview from "./pages/WriteReview";
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +27,7 @@ function App() {
       <Route path="/list" element={<List />} />
       <Route path="/reviewList/*" element={<ReviewList />} />
       <Route path="/review" element={<Review />} />
+      <Route path="/writeReview" element={<WriteReview />} />
     </Routes>
     </div>
   );
